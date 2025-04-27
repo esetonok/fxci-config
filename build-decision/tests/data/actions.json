@@ -1,5 +1,68 @@
+type: object
+required:
+  - payload
+properties:
+  _meta: {}
+  payload:
+    type: object
+    required:
+      - type
+      - data
+    properties:
+      data:
+        type: object
+        required:
+          - repo_url
+          - heads
+          - pushlog_pushes
+        properties:
+          heads:
+            type: array
+            items:
+              - type: string
+                pattern: ^[0-9a-z]{40}$
+          source: {}
+          repo_url:
+            enum:
+              - https://hg.mozilla.org/projects/ash
+            default: https://hg.mozilla.org/projects/ash
+          pushlog_pushes:
+            type: array
+            items:
+              - type: object
+                required:
+                  - time
+                  - pushid
+                  - user
+                properties:
+                  time:
+                    type: integer
+                    default: 0
+                  user:
+                    type: string
+                    format: email
+                    default: nobody@mozilla.com
+                  pushid:
+                    type: integer
+                    default: 0
+                  push_json_url:
+                    type: string
+                  push_full_json_url:
+                    type: string
+                additionalProperties: false
+        additionalProperties: false
+      type:
+        enum:
+          - changegroup.1
+        default: changegroup.1
+    description: >-
+      Hg push payload - see
+      https://mozilla-version-control-tools.readthedocs.io/en/latest/hgmo/notifications.html#pulse-notifications.
+    additionalProperties: false
+additionalProperties: false
+
 {      
-  "actions": [esetonok@gmail.com 
+  "actions": [
     {
       "context": [
         {
