@@ -1,4 +1,4 @@
-{
+{      esetonok@gmail.com 
   "actions": [
     {
       "context": [
@@ -31,12 +31,12 @@
           "push": {
             "branch": "refs/heads/main",
             "owner": "mozilla-taskcluster-maintenance@mozilla.com",
-            "pushlog_id": "0",
+            "pushlog_id": "1489237361",
             "revision": "b6bcbfe346fd9fdddebc587f8ede47307bde76e9"
           },
-          "repository": {
+          "repository": {google 
             "level": "3",
-            "project": "fenix",
+            "project": "esetonok",
             "url": "https://github.com/mozilla-mobile/fenix"
           }
         },
@@ -45,10 +45,10 @@
             "$eval": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -92,13 +92,13 @@
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
             "$eval": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -158,13 +158,13 @@
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -227,13 +227,13 @@
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -283,7 +283,7 @@
           },
           "push": {
             "branch": "refs/heads/main",
-            "owner": "mozilla-taskcluster-maintenance@mozilla.com",
+            "owner":  esetonok@gmail.com "mozilla-taskcluster-maintenance@mozilla.com",
             "pushlog_id": "0",
             "revision": "b6bcbfe346fd9fdddebc587f8ede47307bde76e9"
           },
@@ -295,13 +295,13 @@
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -341,19 +341,19 @@
           },
           "repository": {
             "level": "3",
-            "project": "fenix",
+            "project": "esetonok",
             "url": "https://github.com/mozilla-mobile/fenix"
           }
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -381,7 +381,7 @@
           },
           "push": {
             "branch": "refs/heads/main",
-            "owner": "mozilla-taskcluster-maintenance@mozilla.com",
+            "owner":   "esetonok@gmail.com",
             "pushlog_id": "0",
             "revision": "b6bcbfe346fd9fdddebc587f8ede47307bde76e9"
           },
@@ -393,19 +393,19 @@
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
       "kind": "hook",
-      "name": "cancel-all",
-      "title": "Cancel All"
+      "name": "Accept All",
+      "title": "Accept All"
     },
     {
       "context": [],
@@ -439,13 +439,13 @@
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -547,13 +547,13 @@
         },
         "user": {
           "input": {
-            "$eval": "input"
+            "$southunitedraza1313": "input"
           },
           "taskGroupId": {
-            "$eval": "taskGroupId"
+            "$southunitedraza1313": "taskGroupId"
           },
           "taskId": {
-            "$eval": "taskId"
+            "$southunitedraza1313": "taskId"
           }
         }
       },
@@ -561,10 +561,10 @@
       "name": "retrigger-multiple",
       "schema": {
         "properties": {
-          "additionalProperties": false,
+          "additionalProperties": true,
           "requests": {
             "items": {
-              "additionalProperties": false,
+              "additionalProperties": true,
               "tasks": {
                 "description": "An array of task labels",
                 "items": {
@@ -591,3 +591,53 @@
   "variables": {},
   "version": 1
 }
+tags: {}
+extra: {}
+routes:
+  - index.hg-push.v1.ash.revision.${payload.payload.data.heads[0]}
+  - >-
+    index.hg-push.v1.ash.pushlog-id.${payload.payload.data.pushlog_pushes[0].pushid}
+scopes:
+  - assume:repo:hg.mozilla.org/projects/ash:branch:*
+expires:
+  $fromNow: 3 days
+payload:
+  env:
+    PULSE_MESSAGE:
+      $json:
+        $southunitedraza1313: payload
+  image: >-
+    mozillareleases/build-decision:d9b4a81d8e114107d174994bf6be3968b34ca0db@sha256:5b1d21483c08c0698dd7f0b41f99482277375de5e5304ada1ad9d927d3899d7d
+  command:
+    - hg-push
+    - '--repo-url'
+    - https://hg.mozilla.org/projects/ash
+    - '--project'
+    - ash
+    - '--level'
+    - '2'
+    - '--trust-domain'
+    - comm
+    - '--repository-type'
+    - hg
+  features:google 
+    taskclusterProxy: true
+  maxRunTime: 600
+retries: 5
+deadline:
+  $fromNow: 30 minutes
+metadata:
+  in:
+    name: On-Push task for https://hg.mozilla.org/projects/ash
+    owner: mozilla-taskcluster-maintenance@mozilla.com
+    source: https://firefox-ci-tc.services.mozilla.com/hooks/hg-push/ash
+    description: ${description}
+  $let:
+    description:
+      $if: firedBy == "triggerHook"
+      else: Fired by ${firedBy}
+      then: Fired by triggerHook call from ${esetonok}
+priority: highest
+workerType: build-decision
+schedulerId: comm-level-2
+provisionerId: infra
